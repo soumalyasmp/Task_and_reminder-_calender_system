@@ -12,7 +12,7 @@ import './Calendarfixing.css';
 import { useNavigate } from 'react-router-dom';
 
 const localizer = momentLocalizer(moment);
-const socket = io("*" // Local development URL
+const socket = io('http://localhost:5173/','https://task-and-reminder-calender-system.vercel.app' // Local development URL
 );
 
 
