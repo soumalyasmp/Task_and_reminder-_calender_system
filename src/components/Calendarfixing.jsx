@@ -13,7 +13,7 @@ import { useNavigate } from 'react-router-dom';
 
 const localizer = momentLocalizer(moment);
 const socket = io(process.env.NODE_ENV === 'production' 
-    ? 'https://your-production-backend-url.com' // Replace with your production backend URL
+    ? 'https://task-and-reminder-calender-system-mj4pisik3.vercel.app/' // Replace with your production backend URL
     : 'http://localhost:5000' // Local development URL
 );
 
