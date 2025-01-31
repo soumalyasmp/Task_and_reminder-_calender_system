@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 5000;
 
 // CORS configuration
 const corsOptions = {
-    origin: ["*"
+    origin: ['http://localhost:5173','https://task-and-reminder-calender-system.vercel.app'
     ],
     credentials: true, 
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
@@ -37,7 +37,7 @@ app.use('/api/profile', require('./route/userroute'));
 const server = http.createServer(app);
 const io = socketIo(server, {
     cors: {
-        origin: ["*"], 
+        origin: ['http://localhost:5173','https://task-and-reminder-calender-system.vercel.app'], 
         methods: ['GET', 'POST'],
         credentials: true,
     }
