@@ -18,7 +18,7 @@ const corsOptions = {
         'https://task-and-reminder-calender-system.vercel.app' // Production frontend
     ],
     credentials: true, // Allow credentials (cookies, authorization headers, etc.)
-    methods: ['POST', 'GET', 'PUT', 'DELETE', 'OPTIONS'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
 };
 
@@ -44,6 +44,9 @@ const io = socketIo(server, {
         credentials: true,
     }
 });
+
+// Handle preflight requests
+app.options('*', cors(corsOptions)); // Enable preflight for all routes
 
 // Socket.IO connection
 io.on('connection', (socket) => {
