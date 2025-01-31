@@ -18,8 +18,12 @@ const io = socketIo(server, {
     }
 });
 require('dotenv').config();
-app.use(express.json());
-app.use(cookieparser());
+app.use(express.json());console.log('Server dependencies loaded');
+console.log('Server initialized');
+console.log('Database connection established');
+console.log('Server listening on port', PORT);
+console.log('Socket.io server initialized');
+console.log('Cors enabled for frontend connection');
 const connectdb=require('./config/db');
 connectdb();
 app.use(cors({
@@ -28,6 +32,7 @@ app.use(cors({
     methods:['POST','GET','PUT','DELETE','OPTIONS'],
     allowedHeaders:['Content-Type','Authorization'],
 }));
+app.use(cookieparser());
 app.use('/api/auth',require('./route/authroute'));
 app.use('/api/profile',require('./route/userroute')(io));
 const PORT=process.env.PORT||5000;
