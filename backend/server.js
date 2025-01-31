@@ -14,7 +14,7 @@ const socketIo=require('socket.io');
 const server=http.createServer(app);
 const io = socketIo(server, {
     cors: {
-        origin: 'http://localhost:5173', // Allow frontend to connect
+        origin: ['http://localhost:5173','https://task-and-reminder-calender-system.vercel.app'], // Allow frontend to connect
     }
 });
 require('dotenv').config();
