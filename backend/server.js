@@ -23,7 +23,7 @@ app.use(cookieparser());
 const connectdb=require('./config/db');
 connectdb();
 app.use(cors({
-    origin:['http://localhost:5173','https://task-and-reminder-calender-system.vercel.app/'],
+    origin:['http://localhost:5173','https://task-and-reminder-calender-system.vercel.app'],
     credentials:true,
     methods:['POST','GET','PUT','DELETE','OPTIONS'],
     allowedHeaders:['Content-Type','Authorization'],
