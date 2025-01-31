@@ -12,7 +12,11 @@ import './Calendarfixing.css';
 import { useNavigate } from 'react-router-dom';
 
 const localizer = momentLocalizer(moment);
-const socket = io('http://localhost:5000'); // Connect to backend WebSocket
+const socket = io(process.env.NODE_ENV === 'production' 
+    ? 'https://your-production-backend-url.com' // Replace with your production backend URL
+    : 'http://localhost:5000' // Local development URL
+);
+
 
 const Calendarfixing = () => {
     const [date, setDate] = useState(new Date());
